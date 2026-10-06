@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071c22">
+  <meta name="description" content="Sign in to your Stackly Sports tournament workspace.">
+  <title>Log in — Stackly Sports</title>
+  <link rel="icon" type="image/webp" href="stackly-logo-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="stackly-sports/assets/css/site.css">
+  <script src="stackly-sports/assets/js/site.js" defer></script>
+</head>
+<body class="auth-page" data-page="login">
+  <a class="skip-link" href="#login-form">Skip to login</a>
+
+  <main class="auth-panel">
+    <button class="back-btn auth-panel-back" type="button" data-go-back aria-label="Go back"><span class="back-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></span><span>Back</span></button>
+    <div class="lb" aria-hidden="true"><img src="stackly-sports/assets/img/auth-stadium.webp" alt="" width="760" height="900" fetchpriority="high"></div>
+    <div class="wob wob--blue" aria-hidden="true"></div>
+    <div class="wob wob--sky" aria-hidden="true"></div>
+    <div class="container panel-inner">
+      <a class="brand auth-brand-chip" href="index.html" aria-label="Stackly Sports home"><img src="stackly-logo-icon.webp" alt="" width="40" height="40"><span>Stackly</span></a>
+      <h1>Make the <em>moment</em><br><span class="grad-text-v">matter.</span></h1>
+      <p>Stackly keeps the operational noise out of your way, so your team can focus on the people, plays, and progress in front of them.</p>
+    </div>
+  </main>
+
+  <section class="auth-form-shell" aria-label="Login form">
+    <div class="auth-card">
+      <button class="back-btn card-back" type="button" data-go-back aria-label="Go back"><span class="back-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></span><span>Back</span></button>
+
+      <div class="auth-toggle" role="group" aria-label="Switch between login and sign up">
+        <span class="auth-toggle-thumb" aria-hidden="true"></span>
+        <a class="auth-toggle-opt on" href="login.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M15 3h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg> Log in</a>
+        <a class="auth-toggle-opt" href="signup.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg> Sign up</a>
+      </div>
+
+      <div class="form-head">
+        <span class="eyebrow">Sign in</span>
+        <h1 id="login-title">Welcome back to <span class="grad-text">Stackly</span></h1>
+        <p>Choose your role and enter your details to get back to work.</p>
+      </div>
+
+      <form id="login-form" novalidate>
+        <div class="field role-field">
+          <div class="role-switch" role="radiogroup" aria-label="Select role">
+            <span class="role-thumb" aria-hidden="true"></span>
+            <label class="role-opt team on"><input type="radio" name="lrole" value="team" checked><span class="r-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span> Team</label>
+            <label class="role-opt admin"><input type="radio" name="lrole" value="admin"><span class="r-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span> Admin</label>
+          </div>
+          <input type="hidden" name="role" value="team" data-validate="required">
+          <span class="field-error" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label class="form-label" for="login-email"><span>Email address <span class="req">*</span></span></label>
+          <div class="input-wrap">
+            <span class="i-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+            <input class="input with-ico" id="login-email" name="email" type="email" autocomplete="email" placeholder="you@organization.com" value="team@stackly.demo" data-validate="email" required>
+          </div>
+          <span class="field-error" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label class="form-label" for="login-password"><span>Password <span class="req">*</span></span></label>
+          <div class="input-wrap">
+            <span class="i-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <input class="input with-ico with-toggle" id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" value="Demo1234" data-validate="password" required>
+            <button class="toggle-pass" type="button" data-password-toggle="login-password" aria-label="Show password">Show</button>
+          </div>
+          <span class="field-error" aria-live="polite"></span>
+        </div>
+
+        <div class="auth-row">
+          <label class="remember-opt"><input type="checkbox" name="remember"><span>Keep me signed in</span></label>
+          <a class="forgot-link" href="404.html">Forgot password?</a>
+        </div>
+
+        <button class="button button--accent button--wide" type="submit">Log in to Stackly <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></button>
+
+        <p class="form-note">New to Stackly? <a href="signup.html">Create an account</a></p>
+      </form>
+
+      <div class="role-note role-note--demo">
+        <strong class="note-title">Demo login</strong>
+        <div class="demo-creds">
+          <span class="demo-tag">Team</span><code>team@stackly.demo</code><code class="demo-pass">Demo1234</code>
+          <span class="demo-tag">Admin</span><code>admin@stackly.demo</code><code class="demo-pass">Demo1234</code>
+        </div>
+        <span class="demo-hint">The form is prefilled, just press Log in.</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
