@@ -8,9 +8,9 @@ const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(sel
 const publicNav = [
   ['home', 'Home', 'index.html'],
   ['tournaments', 'Tournaments', 'tournaments.html'],
-  ['matches', 'Matches', 'matches.html'],
   ['teams', 'Teams', 'teams.html'],
   ['services', 'Services', 'services.html'],
+  ['about', 'About', 'about.html'],
   ['contact', 'Contact', 'contact.html']
 ];
 
@@ -65,7 +65,7 @@ function renderPublicChrome() {
         <div class="container">
           <div class="footer-top">
             <div class="footer-brand"><a class="brand" href="index.html"><img src="${logo}" alt="" width="40" height="40"><span>STACKLY</span></a><p>The calm command center for ambitious sports. Run tournaments, teams, scores, and every detail that makes game day feel effortless.</p><div class="social-row" aria-label="Stackly Sports on social media">${socialRow}</div></div>
-            <div class="footer-column"><h3>Explore</h3><a href="index.html">Home</a><a href="tournaments.html">Tournaments</a><a href="matches.html">Matches</a><a href="teams.html">Teams</a><a href="contact.html">Contact</a></div>
+            <div class="footer-column"><h3>Explore</h3><a href="index.html">Home</a><a href="about.html">About us</a><a href="tournaments.html">Tournaments</a><a href="teams.html">Teams</a><a href="contact.html">Contact</a></div>
             <div class="footer-column"><h3>Services</h3><a href="404.html">Tournament planning</a><a href="404.html">Live scoring</a><a href="404.html">Venue coordination</a><a href="404.html">Team &amp; roster tools</a><a href="404.html">Analytics &amp; reporting</a></div>
             <div class="footer-column footer-column--contact"><h3>Contact details</h3><span class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>hello@stackly.demo</span></span><span class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+1 (555) 123-4567</span></span><span class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span>partnerships@stackly.demo</span></span><span class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon&ndash;Fri &middot; 9:00&ndash;18:00 UTC</span></span><span class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Remote-first &middot; Built for every venue</span></span></div>
           </div>
@@ -775,7 +775,7 @@ function setupReturnTracking() {
   }, true);
 }
 
-const DEMO_PAGES = ['home', 'tournaments', 'matches', 'teams', 'services', 'contact'];
+const DEMO_PAGES = ['home', 'tournaments', 'teams', 'services', 'about', 'contact'];
 const KEEP_CLICKABLE = [
   '.menu-toggle', '.drawer-close', '[data-drawer-close]', '[data-drawer-backdrop]',
   '.skip-link', '.select-trigger', '.select-option', '[data-filter-button]',
@@ -790,6 +790,7 @@ function setupDemoRouting() {
     if (!(event.target instanceof Element)) return;
     const target = event.target.closest('a, button');
     if (!target || target.closest(KEEP_CLICKABLE)) return;
+    if (target.matches('a[href^="#"]')) return;
     if (target.matches('a[href="login.html"]')) return;
     const form = target.closest('form');
     if (form && target.matches('button[type="submit"], input[type="submit"]')) return;
